@@ -70,11 +70,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'DEAL-TECH',
         'USER': 'postgres',
         'PASSWORD': '2611',
-        'HOST': '127.0.0.1',
+        'HOST': '.vercel.app',
         'PORT': '5432',
     }
 }
