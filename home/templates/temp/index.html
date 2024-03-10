@@ -1,0 +1,516 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="static/images/favicon.png" type="">
+
+  <title>DEAL </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet"  href="{%static 'bootstrap.css' %} ">
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+  <!-- font awesome style -->
+  <link href="{%static 'all.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{%static 'style.css' %} " rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{%static 'responsive.css'%} " rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="{%static 'images/hero-bg.png' %}" alt="">
+      </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+             DEAL
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'services:services' %}">Services</a>
+              </li> 
+
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'Blog:blog'%}">BLOG</a> 
+              </li>
+
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'Compitition:questions'%}">competition
+                  
+                  
+                  <span>
+                    
+                    <img class="bg_img_box2" 
+                    src="{%static 'images/crescent-moon.png' %}" alt="">
+                    <style>
+                      .bg_img_box2 {
+                        margin-left: 5px;
+                        width: 25px;
+                        height: 25px;
+                      }
+                    </style>
+                  </span>
+                </a>
+              </li>
+
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'contact:send'%}">contact us</a>
+              </li>
+             
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            {%for a in add %}
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                     {{a.title}} 
+                    </h1>
+                    <p>
+                      {{a.description1}}
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ a.image.url }}" alt="photo">
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+          <div class="carousel-item ">
+            {%for tow in addtow%}
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      {{tow.title}}   <br>
+                    
+                    </h1>
+                    <p>
+                      {{tow.description1}}
+                    </p>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ tow.image.url }}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+          <div class="carousel-item">
+            {%for three in addthree%}
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      {{three.title}} <br>
+                    
+                    </h1>
+                    <p>
+                      {{three.description1}}                    </p>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{{ three.image.url }}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+        </ol>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="heading_container heading_center">
+        <h2>
+          About <span>Us</span>
+        </h2>
+        <p>
+          a startup company in information and technology we have a view about future that respect your idea
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{%static 'images/10.jpg' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h3>
+              We Are <span>DEAL</span>
+            </h3>
+            <p>
+              
+
+              We are a technology information company  Our targets is to foster innovation by supporting new ideas from creative young developers and designers. 
+              <p>
+              Our focus areas include:</p>
+              
+               
+              <p>-**Sustainable Development**: We believe in creating solutions that are sustainable and beneficial for our society and environment.</p>
+              - **Community Development**: We are committed to contributing to our community, particularly in supporting educational plans for children.
+            </p>
+             <p>
+                - **Education Innovation**: We have a strategic plan to develop educational ideas, making them easier, smarter, and more sophisticated in a way that suits children's ideas. Our goal is to shape the future of education by making learning more engaging and effective for the younger generation.
+            </p>
+            <p>
+              
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- why section -->
+
+  <section class="why_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Why Choose <span>Us</span>
+        </h2>
+      </div>
+      <div class="why_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="{%static 'images/w1.png' %}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              DIRECTOR MESSAGE
+            </h5>
+            <p>
+              "We are working hard to provide innovative technological solutions that meet your needs and help improve your daily lives. We believe that technology can be a force for good, a tool for positive change, digital transformation, and sustainable development.
+
+             <p> We are working on creating generations that appreciate working in the field of software and marketing. The message of education and aspiration is our primary message, along with working to transform the current reality into what the future could be.
+              </p><p>
+              We appreciate your support and trust in us, and we look forward to continuing to serve you in the best possible way.
+              </p> <p>
+              With sincere greetings, Deal Technology Team"
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{%static 'images/w2.png' %}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              VISSION
+            </h5>
+            <p>
+              "The field of information technology is evolving every moment, and reaching the future is important and must be from the acceleration in time and ideas that correspond to this rapid change. Based on this, the vision of the DEAL Information Technology Company crystallizes in the idea of anticipating the future, and our current ideas must precede the current situation."
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{%static 'images/w3.png' %}" alt="">
+          </div>
+          <div class="MISSION">
+            <h5>
+              MISSION
+            </h5>
+            <p>
+              “Reaching the forefront of software developers in the Middle East and developing communities through my marketing and programming teams, and creating a technological revolution with a team of young people who can lead tomorrow within 5 years start 1/1/2026.”
+            </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="{%static 'images/w4.png'%}" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              VALUES
+            </h5>
+            <p>
+              “We have a lot of values that we offer to the world and to the communities of the Middle East.
+              <p> Sustainable development through the use of advanced technology that can transform transactions into digital transactions</p>. <p>Education and its development</p>. <p>Supporting young people and their intellectual and cultural orientations</p>
+              .”
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          Read More
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+ 
+  <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+           our <span>PROJECTS</span>
+        </h2>
+      </div>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel client_owl-carousel">
+          {% for project in projects %}
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{project.photo.url}}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                    {{project.title}}
+                    </h6>
+                    <p>
+                     {{project.owner_name}}
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  {{project.description}} </p>
+              </div>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+
+  </section>
+
+  <!-- end client section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              ISMILIA EGYPT
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                 ISMAILIA EGYPT
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +20 01228567268
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  dealtechnologycompany@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-square-x-twitter"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="{% url 'Home:home' %}">
+                Home
+              </a>
+              <a class="" href="{% url 'services:services' %}">
+                Services
+              </a>
+              
+              <a class="" href="{% url 'Blog:blog' %}">
+                Blog
+              </a>
+
+              <a class="" href="{% url 'Compitition:questions'%}">
+                competition
+              </a>
+
+              <a class="" href="{% url 'contact:send'%}">
+                contact us
+              </a>
+
+
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="YOUR NAME" name='name'>
+            <br>
+            <input type="text" placeholder="Enter email" name='email'>
+            <br>
+            <input type="text" placeholder="PHONE NUMBER" name='phone'>
+            
+            <button type="submit">
+              Send Us
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://DEALTECHEG.COM/">DEAL</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="{%static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script src="{%static 'js/bootstrap.js' %} "></script>
+  <script src="{%static 'all.min.js' %} "></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script src="{%static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>
