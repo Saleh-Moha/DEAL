@@ -71,11 +71,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DEAL-TECH',
+        'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': '2611',
-        'HOST': '.vercel.app',
-        'PORT': '5432',
+        'HOST': 'containers-us-west-160.railway.app',
+        'PORT': '5072',
     }
 }
 
