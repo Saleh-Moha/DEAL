@@ -42,6 +42,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -68,14 +69,17 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+from dotenv import load_dotenv
+load_dotenv()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': '2611',
-        'HOST': 'containers-us-west-160.railway.app',
-        'PORT': '5972',
+        'USER':'postgres',
+        'PASSWORD': 'lPAqXYedfVuxPrKWkNacvnYhZzmEAvFJ',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT':'29344',
+
     }
 }
 
