@@ -73,12 +73,12 @@ from dotenv import load_dotenv
 load_dotenv()
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'railway',
         'USER':'postgres',
-        'PASSWORD': 'ToxQhyJOWZwMAFLHDHJDzyperskZNvuw',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT':'38752',
+        'PASSWORD': 'lPAqXYedfVuxPrKWkNacvnYhZzmEAvFJ',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT':'29344',
 
     }
 }
