@@ -114,29 +114,29 @@
                   <div class="detail-box">
                     <form method="post">
                       {%csrf_token%}
-                      <label for="name">Name:</label>
+                      <label for="name">الاسم</label>
                       <input type="text" id="name" name="name" required><br>
               
-                      <label for="email">Email:</label>
+                      <label for="email">الايميل:</label>
                       <input type="email" id="email" name="email" required><br>
               
-                      <label for="phone">Phone Number:</label>
+                      <label for="phone">رقم التيليفون:</label>
                       <input type="tel" id="phone" name="phone" required><br>
                       
-                      <label for="answer">Answer:</label>
+                      <label for="answer">الاجابة:</label>
                       <textarea id="answer" name="answer" rows="4" cols="50" required></textarea><br>
               
-                      <button  type="submit">submit</button>
+                      <button  type="submit">أجب</button>
                     </form>
                     <style>
                         .detail-box form input {
                           
                            border: none;                    
                            border-bottom: 1px solid #000000;
-                           background-color: transparent;
+                           background-color: white;
                            width: 400px;
                            height: 45px;
-                           color: #000000;
+                           color:white;
                            outline: none;
                            margin: 10px;
                            font-family: inherit;
@@ -144,6 +144,11 @@
                            line-height: inherit;
                            margin-left: -1px;
                         }
+                        @media (max-width: 990px) {
+                          .detail-box label {
+                            color:white;
+                        }
+                      }
                     </style>
                 </div>
               </div>
