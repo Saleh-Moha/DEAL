@@ -3,7 +3,7 @@ from . models import *
 
 class AnswerAdmin(admin.ModelAdmin):
     list_display = ['id','name','answer','question']
-    list_filter = ['name','question']
+    list_filter = ['name','question','number','email']
 
 admin.site.register(Questions)
 admin.site.register(Answer,AnswerAdmin)
