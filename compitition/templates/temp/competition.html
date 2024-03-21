@@ -53,6 +53,11 @@
             <span class="span2">
               DEAL
             </span>
+            <style>
+              .navbar-brand .span2  {
+                color : white;
+              }
+            </style>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -112,8 +117,12 @@
               <div class="col-md-4 ">
                 <div class="box ">
                   <div class="img-box">
-                    <img src="{{ list.image.url }}" alt="pyrmaids">
+                    <img src="{%static 'images\WhatsApp Image 2024-02-05 at 15.18.33_bd4d1909.jpg'%}" alt="deal">
                   </div>
+                  <div class="img-box">
+                    <img src="{{ list.image.url }}" alt="pyrmaids">  
+                  </div>
+
                   <div class="detail-box">
                     
                     <p>
