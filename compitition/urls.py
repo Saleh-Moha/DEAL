@@ -6,5 +6,5 @@ from . views import *
 app_name = 'Comptition'
 urlpatterns = [
     path('',Questions_list,name='questions'),
-    path('<str:slug>',Answer_question,name='answer'),
+    path('/<str:slug>',Answer_question,name='answer'),
 ]
