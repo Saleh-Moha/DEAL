@@ -7,7 +7,7 @@ urlpatterns = [
     path('dealAdmin/', admin.site.urls),
     path('Home', include('home.urls',namespace='Home')),
     path('Blog', include('blog.urls',namespace='Blog')),
-    path('Compitition', include('compitition.urls',namespace='Compitition')),
+    path('Competition', include('compitition.urls',namespace='Compitition')),
     path('Services', include('services.urls',namespace='services')),
     path('Contact_Us', include('contact_us.urls',namespace='contact')),
 ]
